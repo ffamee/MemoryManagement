@@ -5,6 +5,7 @@ int init_global_var = 5;
 int uninit_global_var1;
 int init_global_var2 = 5;
 int uninit_global_var2;
+int init_to_zero_global_var = 0;
 char word[3][8] = {"first", "second", "third"};
 
 void recursive(int i){
@@ -30,7 +31,7 @@ void recursive(int i){
 	return ;
 }
 
-int main(int argc, char *argv[]){
+int main(){
 	printf("---- Part 1: text segment ----\n");
 	printf("address of recursive function:  %p\n", recursive);
 	printf("address of main function:       %p\n", main);
@@ -39,8 +40,8 @@ int main(int argc, char *argv[]){
 	printf("address of inti_global_var2:    %p\n", &init_global_var2);
 	printf("address of uninit_global_var1:  %p\n", &uninit_global_var1);
 	printf("address of uninit_global_var2:  %p\n", &uninit_global_var2);
+	printf("address of init_to_zero_var:    %p\n", &init_to_zero_global_var);
 	printf("\n---- Part 3: stack and heap segment ----\n");
-	printf("represents the starting point of the stack at: %p\n", &argc);
 	printf("start recursive:\n");
 	recursive(1);
 }
